@@ -27,7 +27,7 @@ export const RegistrationFormComponent = (props) => {
                 placeholder={"PASSWORD"} type={"text"}/>
             <input value = {props.repeatPassword}
                 onChange={(e) => props.actionHandler({type: "UPDATE_REPEATPASSWORD", value: e.target.value})}
-                placeholder={"REPEAT PASSWORD"} type={"text"} className={s.isRight = (props.password == props.repeatPassword) ? "Right" : "NotRight"}/>
+                placeholder={"REPEAT PASSWORD"} type={"text"} isRight = {(props.password == props.repeatPassword) ? "Right" : "NotRight"}/>
             <p>Аккаунт для:</p>
            <div className ={s.radioButton}>
            <input value = {props.isStudent}

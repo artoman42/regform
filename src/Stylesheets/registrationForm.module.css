@@ -40,11 +40,11 @@ input[isRight="Right"]{
    -khtml-border-radius: 3px;
    background: #ffffff;
    outline: none; 
-   height: 24px; 
-   width: 120px; 
-   color: #cccccc; 
-   font-size: 11px; 
-   font-family: Tahoma;  
+   left: 50%;
+   top: 50%;
+   height: 30px; 
+   width: 160px;  
+   
 }
 input[isRight="NotRight"]{
     border: 1px solid #f70101;
@@ -54,9 +54,9 @@ input[isRight="NotRight"]{
    -khtml-border-radius: 3px;
    background: #ffffff;
    outline: none; 
-   height: 24px; 
-   width: 120px; 
-   color: #cccccc; 
-   font-size: 11px; 
-   font-family: Tahoma;  
+   left: 50%;
+   top: 50%;  
+   height: 30px; 
+   width: 160px; 
+   
 }
