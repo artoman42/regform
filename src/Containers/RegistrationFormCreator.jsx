@@ -1,6 +1,8 @@
 import React from 'react'
 import { RegistrationFormComponent } from '../Component/RegistrationFormComponent';
 
+import s from '../Stylesheets/registrationForm.module.css'
+
 export class RegistrationFormCreator extends React.Component {
     constructor(props){
         super(props);
@@ -39,23 +41,11 @@ export class RegistrationFormCreator extends React.Component {
                 break;
             case "UPDATE_REPEATPASSWORD":
                 this.setState({repeatPassword:action.value})
+
                 break; 
             case "PUSH_NEW_REGISTRATIONFORM":
                 alert("ALARM ALARM VASHI DANIE SPIZDILI");
-                this.props.addNewTodo(this.state)
-                this.setState({
-                  name:"",
-                  surname:"",
-                  mail:"",
-                  phone:"",
-                  login:"",
-                  password:"",
-                  repeatPassword:"",
-                  isStudent:"",
-                  isTeacher:"",
                 
-                
-                })
                 break;
             default: throw new Error(`BAD ACTION TYPE:${action.type}`)
             }    
