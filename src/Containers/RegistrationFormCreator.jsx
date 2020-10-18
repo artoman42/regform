@@ -1,5 +1,4 @@
 import React from 'react'
-import {RegistrationFormCreator} from "../Component/RegistrationFormComponent"
 
 export class RegistrationFormCreator extends React.Component {
     constructor(props){
@@ -63,6 +62,6 @@ export class RegistrationFormCreator extends React.Component {
 
     render(){
         return <RegistrationFormCreator actionHandler = {this.actionHandler} {...this.state}/>
-        
+
     }
 }
