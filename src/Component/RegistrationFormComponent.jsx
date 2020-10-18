@@ -38,6 +38,19 @@ export const RegistrationFormComponent = (props) => {
                 onChange={(e) => props.actionHandler({type: "UPDATE_ISTEACHER", value: e.target.value})}
                 placeholder={"Teacher"} type={"radio"}/>
             <p>Teacher</p>
+            {
+                props.isStudent ? (
+                    <select>
+                        <option disabled>Група</option>
+                        <option value="K-71">К-71</option>
+                        <option value="Ф-51">Ф-51</option>
+                    </select>
+                    ) : props.isTeacher ? (
+                            <input value = {props.key}
+                            onChange={(e) => props.actionHandler({type: "UPDATE_KEY", value: e.target.value})}
+                            placeholder={"KEY"} type={"text"}/>
+                            ) : null
+            }
             </div>      
 
              <input onClick={() => props.actionHandler({type: "PUSH_NEW_REGISTRATIONFORM"})} type={"submit"}/>   

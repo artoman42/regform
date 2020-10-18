@@ -41,8 +41,13 @@ export class RegistrationFormCreator extends React.Component {
                 break;
             case "UPDATE_REPEATPASSWORD":
                 this.setState({repeatPassword:action.value})
-
                 break; 
+            case "UPDATE_ISSTUDENT":
+                this.setState({isStudent:action.value})
+                break;
+            case "UPDATE_ISTEACHER":
+                this.setState({isTeacher:action.value})
+                break;
             case "PUSH_NEW_REGISTRATIONFORM":
                 alert("ALARM ALARM VASHI DANIE SPIZDILI");
                 
