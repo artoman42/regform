@@ -28,30 +28,35 @@ export const RegistrationFormComponent = (props) => {
             <input value = {props.repeatPassword}
                 onChange={(e) => props.actionHandler({type: "UPDATE_REPEATPASSWORD", value: e.target.value})}
                 placeholder={"REPEAT PASSWORD"} type={"text"} isRight = {(props.password == props.repeatPassword) ? "Right" : "NotRight"}/>
-            <p>Аккаунт для:</p>
+            <p className={s.regform_Text}>Аккаунт для:</p>
            <div className ={s.radioButton}>
-           <input value = {props.isStudent}
-                onChange={(e) => props.actionHandler({type: "UPDATE_ISSTUDENT", value: e.target.value})}
-                placeholder={"Student"} type={"radio"}/>
-            <p>Student</p>
-             <input value = {props.isTeacher}
-                onChange={(e) => props.actionHandler({type: "UPDATE_ISTEACHER", value: e.target.value})}
-                placeholder={"Teacher"} type={"radio"}/>
-            <p>Teacher</p>
+               <p name ={"status"}>Student</p>
+               <input value = {props.userType}
+                onChange={(e) => props.actionHandler({type: "UPDATE_USERTYPE", value: "student"})}
+                placeholder={"Student"} type={"radio"} for={"status"} name ={'status'}/>
+            
+            </div> 
+            <div className ={s.radioButton}>
+           
+             <input value = {props.userType}
+                onChange={(e) => props.actionHandler({type: "UPDATE_USERTYPE", value: "teacher"})}
+                placeholder={"Teacher"} type={"radio"} name ={'status'}/>
+            <p name ={"status"}>Teacher</p>
+            </div>
             {
-                props.isStudent ? (
+                props.userType ==="student" ? (
                     <select>
                         <option disabled>Група</option>
                         <option value="K-71">К-71</option>
                         <option value="Ф-51">Ф-51</option>
                     </select>
-                    ) : props.isTeacher ? (
+                    ) : props.userType==="teacher" ? (
                             <input value = {props.key}
                             onChange={(e) => props.actionHandler({type: "UPDATE_KEY", value: e.target.value})}
                             placeholder={"KEY"} type={"text"}/>
                             ) : null
             }
-            </div>      
+                
 
              <input onClick={() => props.actionHandler({type: "PUSH_NEW_REGISTRATIONFORM"})} type={"submit"}/>   
 
